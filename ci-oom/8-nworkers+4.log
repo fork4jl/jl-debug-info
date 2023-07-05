@@ -1,0 +1,243 @@
+$ free -h
+               total        used        free      shared  buff/cache   available
+Mem:            15Gi       1.1Gi        12Gi       198Mi       2.1Gi        13Gi
+Swap:          8.0Gi          0B       8.0Gi
+$ ../julia  --check-bounds=yes --startup-file=no --depwarn=error ./runtests.jl  LinearAlgebra -LinearAlgebra/triangular -LinearAlgebra/bidiag -LinearAlgebra/matmul -LinearAlgebra/addmul
+Running parallel tests with:
+  nworkers() = 4
+  nthreads() = 1
+  Sys.CPU_THREADS = 16
+  Sys.total_memory() = 15.363 GiB
+  Sys.free_memory() = 12.957 GiB
+
+Test                          (Worker) | Time (s) | GC (s) | GC % | Alloc (MB) | RSS (MB)
+tests = Any["LinearAlgebra/dense", "LinearAlgebra/symmetric", "LinearAlgebra/diagonal", "LinearAlgebra/special", "LinearAlgebra/qr", "LinearAlgebra/cholesky", "LinearAlgebra/blas", "LinearAlgebra/lu", "LinearAlgebra/uniformscaling", "LinearAlgebra/structuredbroadcast", "LinearAlgebra/hessenberg", "LinearAlgebra/svd", "LinearAlgebra/eigen", "LinearAlgebra/tridiag", "LinearAlgebra/lapack", "LinearAlgebra/lq", "LinearAlgebra/adjtrans", "LinearAlgebra/generic", "LinearAlgebra/schur", "LinearAlgebra/bunchkaufman", "LinearAlgebra/givens", "LinearAlgebra/pinv", "LinearAlgebra/factorization", "LinearAlgebra/abstractq", "LinearAlgebra/ldlt", "LinearAlgebra/symmetriceigen"]
+node1_tests = String[]
+LinearAlgebra/dense                (2) |        started at 2023-07-05T20:27:45.115
+LinearAlgebra/symmetric            (3) |        started at 2023-07-05T20:27:45.223
+LinearAlgebra/special              (5) |        started at 2023-07-05T20:27:45.250
+LinearAlgebra/diagonal             (4) |        started at 2023-07-05T20:27:45.250
+LinearAlgebra/special              (5) |   192.12 |   2.33 |  1.2 |   14477.96 |   996.95
+GC: pause 4.75ms. collected 22.201824MB. incr
+GC: pause 12.83ms. collected 0.032888MB. full recollect
+GC: pause 56.03ms. collected 12.195744MB. incr
+LinearAlgebra/qr                   (5) |        started at 2023-07-05T20:30:57.611
+LinearAlgebra/symmetric            (3) |   253.72 |   5.51 |  2.2 |   16046.05 |  2064.71
+GC: pause 1.36ms. collected 0.066384MB. incr
+GC: pause 11.53ms. collected 0.000944MB. full recollect
+GC: pause 54.11ms. collected 0.003008MB. incr
+LinearAlgebra/cholesky             (3) |        started at 2023-07-05T20:31:59.132
+LinearAlgebra/dense                (2) |   289.64 |   6.78 |  2.3 |   19284.38 |  2241.12
+GC: pause 0.20ms. collected 0.023496MB. incr
+GC: pause 11.10ms. collected 0.000000MB. full recollect
+GC: pause 54.96ms. collected 0.002944MB. incr
+LinearAlgebra/blas                 (2) |        started at 2023-07-05T20:32:35.051
+LinearAlgebra/qr                   (5) |   106.35 |   2.67 |  2.5 |    7429.43 |  1306.76
+GC: pause 0.23ms. collected 0.026576MB. incr
+GC: pause 12.93ms. collected 0.000000MB. full recollect
+GC: pause 54.36ms. collected 0.068952MB. incr
+LinearAlgebra/lu                   (5) |        started at 2023-07-05T20:32:44.035
+LinearAlgebra/diagonal             (4) |   316.58 |   8.65 |  2.7 |   21378.77 |  2454.87
+GC: pause 0.22ms. collected 0.023456MB. incr
+GC: pause 11.70ms. collected 0.000000MB. full recollect
+GC: pause 55.26ms. collected 0.002208MB. incr
+LinearAlgebra/uniformscaling       (4) |        started at 2023-07-05T20:33:01.975
+LinearAlgebra/blas                 (2) |    46.87 |   1.12 |  2.4 |    2460.22 |  2696.48
+GC: pause 0.20ms. collected 0.026552MB. incr
+GC: pause 10.93ms. collected 0.000000MB. full recollect
+GC: pause 52.43ms. collected 0.068960MB. incr
+LinearAlgebra/structuredbroadcast  (2) |        started at 2023-07-05T20:33:21.989
+LinearAlgebra/uniformscaling       (4) |    33.55 |   1.06 |  3.2 |    2022.68 |  2814.46
+GC: pause 0.24ms. collected 0.026600MB. incr
+GC: pause 12.14ms. collected 0.000000MB. full recollect
+GC: pause 52.71ms. collected 0.002872MB. incr
+LinearAlgebra/hessenberg           (4) |        started at 2023-07-05T20:33:35.592
+LinearAlgebra/cholesky             (3) |   103.54 |   2.51 |  2.4 |    5831.68 |  2382.52
+GC: pause 0.20ms. collected 0.026544MB. incr
+GC: pause 9.82ms. collected 0.000000MB. full recollect
+GC: pause 51.46ms. collected 0.068224MB. incr
+LinearAlgebra/svd                  (3) |        started at 2023-07-05T20:33:42.739
+LinearAlgebra/lu                   (5) |    91.81 |   2.50 |  2.7 |    6298.51 |  1601.05
+GC: pause 0.22ms. collected 0.026544MB. incr
+GC: pause 13.08ms. collected 0.000000MB. full recollect
+GC: pause 54.51ms. collected 0.002936MB. incr
+LinearAlgebra/eigen                (5) |        started at 2023-07-05T20:34:15.912
+LinearAlgebra/hessenberg           (4) |    71.28 |   1.60 |  2.2 |    3123.97 |  2860.26
+GC: pause 0.21ms. collected 0.026456MB. incr
+GC: pause 9.31ms. collected 0.000000MB. full recollect
+GC: pause 52.19ms. collected 0.002560MB. incr
+LinearAlgebra/tridiag              (4) |        started at 2023-07-05T20:34:46.933
+LinearAlgebra/svd                  (3) |    69.98 |   1.87 |  2.7 |    3885.23 |  2664.71
+GC: pause 0.19ms. collected 0.026536MB. incr
+GC: pause 9.24ms. collected 0.000000MB. full recollect
+GC: pause 50.99ms. collected 0.002864MB. incr
+LinearAlgebra/lapack               (3) |        started at 2023-07-05T20:34:52.783
+LinearAlgebra/structuredbroadcast  (2) |   104.63 |   1.41 |  1.3 |    3224.38 |  2736.84
+GC: pause 0.20ms. collected 0.026664MB. incr
+GC: pause 9.58ms. collected 0.000000MB. full recollect
+GC: pause 50.70ms. collected 0.002576MB. incr
+LinearAlgebra/lq                   (2) |        started at 2023-07-05T20:35:06.681
+LinearAlgebra/lapack               (3) |    23.87 |   0.56 |  2.3 |    1226.44 |  2695.18
+GC: pause 0.19ms. collected 0.026464MB. incr
+GC: pause 9.64ms. collected 0.000000MB. full recollect
+GC: pause 54.50ms. collected 0.002864MB. incr
+LinearAlgebra/adjtrans             (3) |        started at 2023-07-05T20:35:16.722
+LinearAlgebra/eigen                (5) |    67.09 |   1.85 |  2.8 |    4110.19 |  2036.30
+GC: pause 0.19ms. collected 0.026536MB. incr
+GC: pause 10.11ms. collected 0.000000MB. full recollect
+GC: pause 51.96ms. collected 0.002560MB. incr
+LinearAlgebra/generic              (5) |        started at 2023-07-05T20:35:23.068
+LinearAlgebra/lq                   (2) |    24.47 |   0.85 |  3.5 |    1812.35 |  2767.27
+GC: pause 0.19ms. collected 0.026496MB. incr
+GC: pause 10.37ms. collected 0.000000MB. full recollect
+GC: pause 53.94ms. collected 0.002856MB. incr
+LinearAlgebra/schur                (2) |        started at 2023-07-05T20:35:31.219
+LinearAlgebra/tridiag              (4) |    47.82 |   1.45 |  3.0 |    2650.59 |  2973.10
+GC: pause 0.21ms. collected 0.026528MB. incr
+GC: pause 11.25ms. collected 0.000000MB. full recollect
+GC: pause 55.28ms. collected 0.002560MB. incr
+LinearAlgebra/bunchkaufman         (4) |        started at 2023-07-05T20:35:34.826
+LinearAlgebra/adjtrans             (3) |    31.26 |   1.02 |  3.3 |    2096.36 |  2755.42
+GC: pause 0.21ms. collected 0.026432MB. incr
+GC: pause 11.02ms. collected 0.000000MB. full recollect
+GC: pause 50.72ms. collected 0.002864MB. incr
+LinearAlgebra/givens               (3) |        started at 2023-07-05T20:35:48.041
+LinearAlgebra/givens               (3) |     5.28 |   0.18 |  3.3 |     312.34 |  2758.46
+GC: pause 0.20ms. collected 0.028248MB. incr
+GC: pause 11.83ms. collected 0.000000MB. full recollect
+GC: pause 56.92ms. collected 0.000736MB. incr
+LinearAlgebra/pinv                 (3) |        started at 2023-07-05T20:35:53.390
+LinearAlgebra/schur                (2) |    28.91 |   0.67 |  2.3 |    1336.81 |  2788.90
+GC: pause 0.20ms. collected 0.026488MB. incr
+GC: pause 11.33ms. collected 0.000000MB. full recollect
+GC: pause 57.18ms. collected 0.002864MB. incr
+LinearAlgebra/factorization        (2) |        started at 2023-07-05T20:36:00.197
+LinearAlgebra/pinv                 (3) |     8.98 |   0.42 |  4.6 |     854.80 |  2843.82
+GC: pause 0.20ms. collected 0.026480MB. incr
+GC: pause 9.40ms. collected 0.000000MB. full recollect
+GC: pause 51.84ms. collected 0.002560MB. incr
+LinearAlgebra/abstractq            (3) |        started at 2023-07-05T20:36:02.433
+LinearAlgebra/factorization        (2) |     2.95 |   0.11 |  3.7 |     236.43 |  2789.35
+GC: pause 0.20ms. collected 0.026472MB. incr
+GC: pause 9.91ms. collected 0.000000MB. full recollect
+GC: pause 55.37ms. collected 0.002872MB. incr
+LinearAlgebra/ldlt                 (2) |        started at 2023-07-05T20:36:03.218
+LinearAlgebra/ldlt                 (2) |     0.73 |   0.02 |  3.3 |      44.81 |  2789.35
+GC: pause 0.20ms. collected 0.028192MB. incr
+GC: pause 11.48ms. collected 0.000000MB. full recollect
+GC: pause 55.22ms. collected 0.000736MB. incr
+LinearAlgebra/symmetriceigen       (2) |        started at 2023-07-05T20:36:04.016
+LinearAlgebra/symmetriceigen       (2) |     2.24 |   0.05 |  2.2 |     113.54 |  2789.65
+GC: pause 0.22ms. collected 0.028280MB. incr
+GC: pause 12.76ms. collected 0.000000MB. full recollect
+GC: pause 54.20ms. collected 0.001040MB. incr
+      From worker 2:    Arena 0:
+      From worker 2:    system bytes     = 1219952640
+      From worker 2:    in use bytes     = 1164624944
+      From worker 2:    Total (incl. mmap):
+      From worker 2:    system bytes     = 1310449664
+      From worker 2:    in use bytes     = 1255121968
+      From worker 2:    max mmap regions =         14
+      From worker 2:    max mmap bytes   =   98889728
+      From worker 2:    exec time       506.14356 sec
+      From worker 2:    gc time         11.16639 sec (2.2%) in 574 (0 full) collections
+      From worker 2:    gc pause        19.45 ms avg
+      From worker 2:                    68 ms max
+      From worker 2:                    (55% mark, 44% sweep,  0% finalizers)
+      From worker 2:    page table max utilization : 1 (0.0%) - 2 (0.0%) - 81920 (62.5%)
+      From worker 2:    malloc size     1110 MB
+      From worker 2:    max page alloc  0 MB
+      From worker 2:    total freed     28436830121 b
+      From worker 2:    free rate       2428.7 MB/sec
+LinearAlgebra/abstractq            (3) |     6.17 |   0.22 |  3.6 |     417.45 |  2843.82
+GC: pause 1.82ms. collected 2.685064MB. incr
+GC: pause 10.94ms. collected 0.000000MB. full recollect
+GC: pause 50.06ms. collected 0.012208MB. incr
+      From worker 3:    Arena 0:
+      From worker 3:    system bytes     = 1204772864
+      From worker 3:    in use bytes     = 1135103104
+      From worker 3:    Total (incl. mmap):
+      From worker 3:    system bytes     = 1295269888
+      From worker 3:    in use bytes     = 1225600128
+      From worker 3:    max mmap regions =         12
+      From worker 3:    max mmap bytes   =  107278336
+      From worker 3:    exec time       508.47927 sec
+      From worker 3:    gc time         12.45593 sec (2.4%) in 620 (0 full) collections
+      From worker 3:    gc pause        20.09 ms avg
+      From worker 3:                    72 ms max
+      From worker 3:                    (54% mark, 45% sweep,  0% finalizers)
+      From worker 3:    page table max utilization : 1 (0.0%) - 3 (0.0%) - 85500 (43.5%)
+      From worker 3:    malloc size     1082 MB
+      From worker 3:    max page alloc  0 MB
+      From worker 3:    total freed     30684870634 b
+      From worker 3:    free rate       2349.4 MB/sec
+LinearAlgebra/generic              (5) |    48.80 |   1.33 |  2.7 |    2578.14 |  2256.64
+GC: pause 1.31ms. collected 0.352424MB. incr
+GC: pause 10.33ms. collected 0.003472MB. full recollect
+GC: pause 47.34ms. collected 0.012672MB. incr
+      From worker 5:    Arena 0:
+      From worker 5:    system bytes     = 1141186560
+      From worker 5:    in use bytes     = 1070888208
+      From worker 5:    Total (incl. mmap):
+      From worker 5:    system bytes     = 1290403840
+      From worker 5:    in use bytes     = 1220105488
+      From worker 5:    max mmap regions =         11
+      From worker 5:    max mmap bytes   =  182775808
+      From worker 5:    exec time       511.72411 sec
+      From worker 5:    gc time         10.81186 sec (2.1%) in 692 (0 full) collections
+      From worker 5:    gc pause        15.62 ms avg
+      From worker 5:                    71 ms max
+      From worker 5:                    (57% mark, 42% sweep,  0% finalizers)
+      From worker 5:    page table max utilization : 1 (0.0%) - 2 (0.0%) - 43584 (33.3%)
+      From worker 5:    malloc size     1021 MB
+      From worker 5:    max page alloc  0 MB
+      From worker 5:    total freed     36042657518 b
+      From worker 5:    free rate       3179.2 MB/sec
+LinearAlgebra/bunchkaufman         (4) |    38.82 |   1.07 |  2.8 |    2302.91 |  3080.84
+GC: pause 0.19ms. collected 0.167472MB. incr
+GC: pause 8.66ms. collected 0.003400MB. full recollect
+GC: pause 44.03ms. collected 0.008680MB. incr
+      From worker 4:    Arena 0:
+      From worker 4:    system bytes     = 1190191104
+      From worker 4:    in use bytes     = 1151221680
+      From worker 4:    Total (incl. mmap):
+      From worker 4:    system bytes     = 1280688128
+      From worker 4:    in use bytes     = 1241718704
+      From worker 4:    max mmap regions =         15
+      From worker 4:    max mmap bytes   =   90497024
+      From worker 4:    exec time       513.50107 sec
+      From worker 4:    gc time         13.98537 sec (2.7%) in 655 (0 full) collections
+      From worker 4:    gc pause        21.35 ms avg
+      From worker 4:                    72 ms max
+      From worker 4:                    (56% mark, 43% sweep,  0% finalizers)
+      From worker 4:    page table max utilization : 1 (0.0%) - 3 (0.0%) - 102400 (52.1%)
+      From worker 4:    malloc size     1097 MB
+      From worker 4:    max page alloc  0 MB
+      From worker 4:    total freed     31310290620 b
+      From worker 4:    free rate       2135.1 MB/sec
+
+Test Summary: |  Pass  Broken  Total     Time
+  Overall     | 47424      17  47441  8m30.5s
+    SUCCESS
+Arena 0:
+system bytes     =   30298112
+in use bytes     =   24989008
+Total (incl. mmap):
+system bytes     =   45289472
+in use bytes     =   39980368
+max mmap regions =         13
+max mmap bytes   =   16674816
+exec time       515.64520 sec
+gc time         1.82789 sec (0.4%) in 65 (26 full) collections
+gc pause        28.12 ms avg
+                57 ms max
+                (81% mark, 18% sweep,  0% finalizers)
+page table max utilization : 1 (0.0%) - 1 (0.0%) - 3903 (6.0%)
+malloc size     23 MB
+max page alloc  0 MB
+total freed     609989924 b
+free rate       318.3 MB/sec
+$ free -h
+               total        used        free      shared  buff/cache   available
+Mem:            15Gi       1.1Gi        12Gi       198Mi       2.1Gi        13Gi
+Swap:          8.0Gi          0B       8.0Gi
