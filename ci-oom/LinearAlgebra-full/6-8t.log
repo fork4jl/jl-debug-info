@@ -1,0 +1,264 @@
+~/jl/julia$ free -h
+               total        used        free      shared  buff/cache   available
+Mem:            15Gi       738Mi        14Gi        49Mi       301Mi        14Gi
+Swap:          8.0Gi       775Mi       7.2Gi
+~/jl/julia$ env JULIA_CPU_THREADS=8  make -C test/ LinearAlgebra
+make: Entering directory '~/jl/julia/test'
+    JULIA test/LinearAlgebra
+Running parallel tests with:
+  nworkers() = 8
+  nthreads() = 1
+  Sys.CPU_THREADS = 8
+  Sys.total_memory() = 15.363 GiB
+  Sys.free_memory() = 12.570 GiB
+
+Test                          (Worker) | Time (s) | GC (s) | GC % | Alloc (MB) | RSS (MB)
+LinearAlgebra/symmetric            (7) |        started at 2023-07-06T10:48:54.169
+LinearAlgebra/matmul               (5) |        started at 2023-07-06T10:48:54.245
+LinearAlgebra/special              (9) |        started at 2023-07-06T10:48:54.330
+LinearAlgebra/triangular           (2) |        started at 2023-07-06T10:48:54.330
+LinearAlgebra/bidiag               (4) |        started at 2023-07-06T10:48:54.330
+LinearAlgebra/addmul               (3) |        started at 2023-07-06T10:48:54.330
+LinearAlgebra/dense                (6) |        started at 2023-07-06T10:48:54.330
+LinearAlgebra/diagonal             (8) |        started at 2023-07-06T10:48:54.330
+LinearAlgebra/special              (9) |   246.85 |   3.13 |  1.3 |   14477.92 |   989.57
+LinearAlgebra/qr                   (9) |        started at 2023-07-06T10:53:01.386
+LinearAlgebra/addmul               (3) |   305.50 |   2.20 |  0.7 |   10720.25 |   719.45
+LinearAlgebra/cholesky             (3) |        started at 2023-07-06T10:53:59.915
+LinearAlgebra/symmetric            (7) |   327.61 |   7.07 |  2.2 |   16046.02 |  2074.12
+LinearAlgebra/blas                 (7) |        started at 2023-07-06T10:54:22.062
+LinearAlgebra/dense                (6) |   376.99 |   8.80 |  2.3 |   19284.13 |  2206.80
+LinearAlgebra/lu                   (6) |        started at 2023-07-06T10:55:11.551
+LinearAlgebra/qr                   (9) |   135.45 |   3.49 |  2.6 |    7428.98 |  1244.20
+LinearAlgebra/uniformscaling       (9) |        started at 2023-07-06T10:55:16.869
+LinearAlgebra/blas                 (7) |    60.24 |   1.39 |  2.3 |    2596.12 |  2516.48
+LinearAlgebra/structuredbroadcast  (7) |        started at 2023-07-06T10:55:22.316
+LinearAlgebra/diagonal             (8) |   408.53 |  11.19 |  2.7 |   21378.91 |  2376.10
+LinearAlgebra/hessenberg           (8) |        started at 2023-07-06T10:55:43.001
+      From worker 5:    Arena 0:
+      From worker 5:    system bytes     =   11038720
+      From worker 5:    in use bytes     =    8362064
+      From worker 5:    Total (incl. mmap):
+      From worker 5:    system bytes     =   26030080
+      From worker 5:    in use bytes     =   23353424
+      From worker 5:    max mmap regions =          8
+      From worker 5:    max mmap bytes   =   14991360
+      From worker 5:    exec time       3.94479 sec
+      From worker 5:    gc time         0.07301 sec (1.9%) in 5 (0 full) collections
+      From worker 5:    gc pause        14.60 ms avg
+      From worker 5:                    65 ms max
+      From worker 5:                    (95% mark,  4% sweep,  0% finalizers)
+      From worker 5:    page table max utilization : 1 (0.0%) - 2 (0.0%) - 3154 (2.4%)
+      From worker 5:    malloc size     7 MB
+      From worker 5:    max page alloc  0 MB
+      From worker 5:    total freed     225160962 b
+      From worker 5:    free rate       2941.1 MB/sec
+LinearAlgebra/uniformscaling       (9) |    90.08 |   2.40 |  2.7 |    4028.97 |  1760.27
+LinearAlgebra/svd                  (9) |        started at 2023-07-06T10:56:46.955
+LinearAlgebra/cholesky             (3) |   167.56 |   2.91 |  1.7 |    8371.94 |  1035.00
+LinearAlgebra/eigen                (3) |        started at 2023-07-06T10:56:47.481
+LinearAlgebra/matmul               (5) |   490.79 |  11.87 |  2.4 |   28051.08 |  2657.77
+LinearAlgebra/tridiag              (5) |        started at 2023-07-06T10:57:05.230
+LinearAlgebra/hessenberg           (8) |    91.59 |   2.26 |  2.5 |    3142.21 |  2376.10
+LinearAlgebra/lapack               (8) |        started at 2023-07-06T10:57:14.591
+LinearAlgebra/lu                   (6) |   135.42 |   4.01 |  3.0 |    6838.17 |  2274.93
+LinearAlgebra/lq                   (6) |        started at 2023-07-06T10:57:26.984
+LinearAlgebra/structuredbroadcast  (7) |   132.87 |   1.77 |  1.3 |    3242.14 |  2516.48
+LinearAlgebra/adjtrans             (7) |        started at 2023-07-06T10:57:35.194
+LinearAlgebra/lapack               (8) |    38.58 |   1.05 |  2.7 |    1587.92 |  2376.10
+LinearAlgebra/generic              (8) |        started at 2023-07-06T10:57:53.179
+LinearAlgebra/lq                   (6) |    26.70 |   1.01 |  3.8 |    1615.79 |  2274.93
+LinearAlgebra/schur                (6) |        started at 2023-07-06T10:57:53.689
+LinearAlgebra/tridiag              (5) |    69.51 |   2.20 |  3.2 |    3643.89 |  2657.77
+LinearAlgebra/bunchkaufman         (5) |        started at 2023-07-06T10:58:14.783
+LinearAlgebra/adjtrans             (7) |    40.90 |   1.45 |  3.5 |    2140.98 |  2516.48
+LinearAlgebra/givens               (7) |        started at 2023-07-06T10:58:16.096
+LinearAlgebra/eigen                (3) |    93.35 |   2.27 |  2.4 |    4542.16 |  1383.89
+LinearAlgebra/pinv                 (3) |        started at 2023-07-06T10:58:20.839
+LinearAlgebra/givens               (7) |     9.22 |   0.34 |  3.7 |     423.48 |  2516.48
+LinearAlgebra/factorization        (7) |        started at 2023-07-06T10:58:25.323
+LinearAlgebra/schur                (6) |    33.73 |   0.85 |  2.5 |    1205.50 |  2274.93
+LinearAlgebra/abstractq            (6) |        started at 2023-07-06T10:58:27.426
+LinearAlgebra/svd                  (9) |   102.17 |   2.58 |  2.5 |    4008.95 |  1849.65
+LinearAlgebra/ldlt                 (9) |        started at 2023-07-06T10:58:29.132
+LinearAlgebra/factorization        (7) |     4.03 |   0.17 |  4.3 |     255.20 |  2516.48
+LinearAlgebra/symmetriceigen       (7) |        started at 2023-07-06T10:58:29.353
+LinearAlgebra/ldlt                 (9) |     1.22 |   0.07 |  5.5 |      58.10 |  1850.16
+      From worker 9:    Arena 0:
+      From worker 9:    system bytes     = 1032331264
+      From worker 9:    in use bytes     =  983212288
+      From worker 9:    Total (incl. mmap):
+      From worker 9:    system bytes     = 1114439680
+      From worker 9:    in use bytes     = 1065320704
+      From worker 9:    max mmap regions =         11
+      From worker 9:    max mmap bytes   =   98889728
+      From worker 9:    exec time       582.73451 sec
+      From worker 9:    gc time         11.86352 sec (2.0%) in 575 (0 full) collections
+      From worker 9:    gc pause        20.63 ms avg
+      From worker 9:                    109 ms max
+      From worker 9:                    (55% mark, 44% sweep,  0% finalizers)
+      From worker 9:    page table max utilization : 1 (0.0%) - 2 (0.0%) - 48051 (36.7%)
+      From worker 9:    malloc size     937 MB
+      From worker 9:    max page alloc  0 MB
+      From worker 9:    total freed     30781897564 b
+      From worker 9:    free rate       2474.5 MB/sec
+LinearAlgebra/symmetriceigen       (7) |     2.89 |   0.09 |  3.1 |     119.06 |  2516.48
+      From worker 7:    Arena 0:
+      From worker 7:    system bytes     = 1088663552
+      From worker 7:    in use bytes     = 1077695360
+      From worker 7:    Total (incl. mmap):
+      From worker 7:    system bytes     = 1112043520
+      From worker 7:    in use bytes     = 1101075328
+      From worker 7:    max mmap regions =         12
+      From worker 7:    max mmap bytes   =   67469312
+      From worker 7:    exec time       584.47977 sec
+      From worker 7:    gc time         12.49206 sec (2.1%) in 499 (0 full) collections
+      From worker 7:    gc pause        25.03 ms avg
+      From worker 7:                    97 ms max
+      From worker 7:                    (52% mark, 47% sweep,  0% finalizers)
+      From worker 7:    page table max utilization : 1 (0.0%) - 3 (0.0%) - 77947 (39.6%)
+      From worker 7:    malloc size     1027 MB
+      From worker 7:    max page alloc  0 MB
+      From worker 7:    total freed     24648561937 b
+      From worker 7:    free rate       1881.7 MB/sec
+LinearAlgebra/pinv                 (3) |    13.60 |   0.49 |  3.6 |    1064.79 |  1434.13
+      From worker 3:    Arena 0:
+      From worker 3:    system bytes     =  781332480
+      From worker 3:    in use bytes     =  748106736
+      From worker 3:    Total (incl. mmap):
+      From worker 3:    system bytes     =  863440896
+      From worker 3:    in use bytes     =  830215152
+      From worker 3:    max mmap regions =         12
+      From worker 3:    max mmap bytes   =   98889728
+      From worker 3:    exec time       586.67290 sec
+      From worker 3:    gc time         8.08348 sec (1.4%) in 493 (0 full) collections
+      From worker 3:    gc pause        16.40 ms avg
+      From worker 3:                    97 ms max
+      From worker 3:                    (52% mark, 47% sweep,  0% finalizers)
+      From worker 3:    page table max utilization : 1 (0.0%) - 2 (0.0%) - 32768 (25.0%)
+      From worker 3:    malloc size     713 MB
+      From worker 3:    max page alloc  0 MB
+      From worker 3:    total freed     25640915192 b
+      From worker 3:    free rate       3025.1 MB/sec
+LinearAlgebra/abstractq            (6) |     7.61 |   0.27 |  3.6 |     379.87 |  2274.93
+      From worker 6:    Arena 0:
+      From worker 6:    system bytes     = 1159028736
+      From worker 6:    in use bytes     = 1138004336
+      From worker 6:    Total (incl. mmap):
+      From worker 6:    system bytes     = 1241137152
+      From worker 6:    in use bytes     = 1220112752
+      From worker 6:    max mmap regions =         14
+      From worker 6:    max mmap bytes   =   98889728
+      From worker 6:    exec time       587.27031 sec
+      From worker 6:    gc time         15.17597 sec (2.6%) in 583 (0 full) collections
+      From worker 6:    gc pause        26.03 ms avg
+      From worker 6:                    102 ms max
+      From worker 6:                    (55% mark, 44% sweep,  0% finalizers)
+      From worker 6:    page table max utilization : 1 (0.0%) - 3 (0.0%) - 80915 (41.2%)
+      From worker 6:    malloc size     1085 MB
+      From worker 6:    max page alloc  0 MB
+      From worker 6:    total freed     29400033206 b
+      From worker 6:    free rate       1847.5 MB/sec
+LinearAlgebra/generic              (8) |    59.76 |   1.71 |  2.9 |    2425.48 |  2376.10
+      From worker 8:    Arena 0:
+      From worker 8:    system bytes     = 1133772800
+      From worker 8:    in use bytes     = 1040459232
+      From worker 8:    Total (incl. mmap):
+      From worker 8:    system bytes     = 1224269824
+      From worker 8:    in use bytes     = 1130956256
+      From worker 8:    max mmap regions =         15
+      From worker 8:    max mmap bytes   =   90497024
+      From worker 8:    exec time       605.16595 sec
+      From worker 8:    gc time         16.39341 sec (2.7%) in 574 (0 full) collections
+      From worker 8:    gc pause        28.56 ms avg
+      From worker 8:                    97 ms max
+      From worker 8:                    (54% mark, 45% sweep,  0% finalizers)
+      From worker 8:    page table max utilization : 1 (0.0%) - 3 (0.0%) - 93269 (47.4%)
+      From worker 8:    malloc size     992 MB
+      From worker 8:    max page alloc  0 MB
+      From worker 8:    total freed     28346857404 b
+      From worker 8:    free rate       1649.1 MB/sec
+LinearAlgebra/bunchkaufman         (5) |    53.69 |   1.61 |  3.0 |    3089.56 |  2657.77
+      From worker 5:    Arena 0:
+      From worker 5:    system bytes     = 1166192640
+      From worker 5:    in use bytes     = 1124407936
+      From worker 5:    Total (incl. mmap):
+      From worker 5:    system bytes     = 1290244096
+      From worker 5:    in use bytes     = 1248459392
+      From worker 5:    max mmap regions =         12
+      From worker 5:    max mmap bytes   =  157609984
+      From worker 5:    exec time       620.70940 sec
+      From worker 5:    gc time         15.87075 sec (2.6%) in 677 (0 full) collections
+      From worker 5:    gc pause        23.44 ms avg
+      From worker 5:                    101 ms max
+      From worker 5:                    (48% mark, 51% sweep,  0% finalizers)
+      From worker 5:    page table max utilization : 1 (0.0%) - 4 (0.0%) - 119507 (45.6%)
+      From worker 5:    malloc size     1072 MB
+      From worker 5:    max page alloc  0 MB
+      From worker 5:    total freed     34423201841 b
+      From worker 5:    free rate       2068.5 MB/sec
+LinearAlgebra/bidiag               (4) |   677.22 |  21.61 |  3.2 |   33996.93 |  2963.39
+      From worker 4:    Arena 0:
+      From worker 4:    system bytes     = 1312186368
+      From worker 4:    in use bytes     = 1282513120
+      From worker 4:    Total (incl. mmap):
+      From worker 4:    system bytes     = 1469792256
+      From worker 4:    in use bytes     = 1440119008
+      From worker 4:    max mmap regions =         11
+      From worker 4:    max mmap bytes   =  191164416
+      From worker 4:    exec time       683.86484 sec
+      From worker 4:    gc time         21.80311 sec (3.2%) in 679 (0 full) collections
+      From worker 4:    gc pause        32.11 ms avg
+      From worker 4:                    101 ms max
+      From worker 4:                    (57% mark, 42% sweep,  0% finalizers)
+      From worker 4:    page table max utilization : 1 (0.0%) - 4 (0.0%) - 121465 (46.3%)
+      From worker 4:    malloc size     1223 MB
+      From worker 4:    max page alloc  0 MB
+      From worker 4:    total freed     33671608059 b
+      From worker 4:    free rate       1472.8 MB/sec
+LinearAlgebra/triangular           (2) |   950.61 |  21.32 |  2.2 |   51340.51 |  2893.39
+      From worker 2:    Arena 0:
+      From worker 2:    system bytes     = 1645219840
+      From worker 2:    in use bytes     = 1608205616
+      From worker 2:    Total (incl. mmap):
+      From worker 2:    system bytes     = 1802825728
+      From worker 2:    in use bytes     = 1765811504
+      From worker 2:    max mmap regions =         13
+      From worker 2:    max mmap bytes   =  191164416
+      From worker 2:    exec time       957.28657 sec
+      From worker 2:    gc time         21.51579 sec (2.2%) in 1065 (0 full) collections
+      From worker 2:    gc pause        20.20 ms avg
+      From worker 2:                    97 ms max
+      From worker 2:                    (55% mark, 44% sweep,  0% finalizers)
+      From worker 2:    page table max utilization : 1 (0.0%) - 3 (0.0%) - 87922 (44.7%)
+      From worker 2:    malloc size     1533 MB
+      From worker 2:    max page alloc  0 MB
+      From worker 2:    total freed     52386842744 b
+      From worker 2:    free rate       2322.0 MB/sec
+
+Test Summary: |  Pass  Broken   Total      Time
+  Overall     | 98860    1919  100779  15m53.2s
+    SUCCESS
+Arena 0:
+system bytes     =   30748672
+in use bytes     =   28544288
+Total (incl. mmap):
+system bytes     =   45740032
+in use bytes     =   43535648
+max mmap regions =         13
+max mmap bytes   =   16674816
+exec time       959.74906 sec
+gc time         0.15571 sec (0.0%) in 12 (0 full) collections
+gc pause        12.98 ms avg
+                48 ms max
+                (69% mark, 30% sweep,  0% finalizers)
+page table max utilization : 1 (0.0%) - 2 (0.0%) - 5593 (4.3%)
+malloc size     27 MB
+max page alloc  0 MB
+total freed     575615724 b
+free rate       3525.5 MB/sec
+make: Leaving directory '~/jl/julia/test'
+~/jl/julia$ free -h
+               total        used        free      shared  buff/cache   available
+Mem:            15Gi       648Mi        14Gi        49Mi       353Mi        14Gi
+Swap:          8.0Gi       849Mi       7.2Gi
